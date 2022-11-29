@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//testcase untuk method GET
+//testcase untuk method GET users
 response = WS.sendRequest(findTestObject('users/GET-users'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].id', '1')
@@ -51,7 +51,7 @@ WS.verifyElementPropertyValue(response, '[1].company.name', 'Deckow-Crist')
 WS.verifyElementPropertyValue(response, '[1].company.catchPhrase', 'Proactive didactic contingency')
 WS.verifyElementPropertyValue(response, '[1].company.bs', 'synergize scalable supply-chains')
 
-//testcase untuk method POST
+//testcase untuk method POST users
 response = WS.sendRequest(findTestObject('users/POST-users'))
 WS.verifyResponseStatusCode(response, 201)
 WS.verifyElementPropertyValue(response, 'id', '11')
@@ -70,7 +70,7 @@ WS.verifyElementPropertyValue(response, 'company.name', 'Instagram')
 WS.verifyElementPropertyValue(response, 'company.catchPhrase', 'Instagram is a photo and video sharing social networking service')
 WS.verifyElementPropertyValue(response, 'company.bs', 'Instagram Shopping - Advertising - Reels')
 
-//testcase untuk method PATCH
+//testcase untuk method PATCH users
 response = WS.sendRequest(findTestObject('users/PATCH-users'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'id', '1')
@@ -89,7 +89,7 @@ WS.verifyElementPropertyValue(response, 'company.name', 'Twitter')
 WS.verifyElementPropertyValue(response, 'company.catchPhrase', 'Twitter is a microblogging, social networking service')
 WS.verifyElementPropertyValue(response, 'company.bs', 'Explore · Who to follow · Funny Tweets · Popular videos · Popular images · Viral Tweets · Football')
 
-//testcase untuk method PUT
+//testcase untuk method PUT users
 response = WS.sendRequest(findTestObject('users/PUT-users'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'name', 'wina')
@@ -108,6 +108,6 @@ WS.verifyElementPropertyValue(response, 'company.catchPhrase', 'Facebook adalah 
 WS.verifyElementPropertyValue(response, 'company.bs', 'Mengikuti berita teman kini lebih cepat dari sebelumnya. • Mengetahui apa yang dilakukan teman • Berbagi pembaruan, foto, dan video')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
-//testcase untuk method DELETE
+//testcase untuk method DELETE users
 response = WS.sendRequest(findTestObject('users/DELETE-users'))
 WS.verifyResponseStatusCode(response, 200)

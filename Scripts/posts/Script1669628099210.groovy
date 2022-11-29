@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-//testcase untuk method GET
+//testcase untuk method GET posts
 response = WS.sendRequest(findTestObject('posts/GET-posts'))
 
 WS.verifyResponseStatusCode(response, 200)
@@ -32,7 +32,7 @@ WS.verifyElementPropertyValue(response, '[1].id', '2')
 WS.verifyElementPropertyValue(response, '[1].title', 'qui est esse')
 WS.verifyElementPropertyValue(response, '[1].body', 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla')
 
-//testcase untuk method POST
+//testcase untuk method POST posts
 response = WS.sendRequest(findTestObject('posts/POST-posts'))
 WS.verifyResponseStatusCode(response, 201)
 WS.verifyElementPropertyValue(response, 'userId', '101')
@@ -40,7 +40,7 @@ WS.verifyElementPropertyValue(response, 'id', '101')
 WS.verifyElementPropertyValue(response, 'title', 'Assignment katalon')
 WS.verifyElementPropertyValue(response, 'body', 'Tugas API')
 
-//testcase untuk method PATCH
+//testcase untuk method PATCH posts
 response = WS.sendRequest(findTestObject('posts/PATCH-posts'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'userId', '1')
@@ -48,13 +48,13 @@ WS.verifyElementPropertyValue(response, 'id', '1')
 WS.verifyElementPropertyValue(response, 'title', 'pakai method PATCH')
 WS.verifyElementPropertyValue(response, 'body', 'pakai method PATCH nih')
 
-//testcase untuk method PUT
+//testcase untuk method PUT posts
 response = WS.sendRequest(findTestObject('posts/PUT-posts'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'title', 'pakai method PUT')
 WS.verifyElementPropertyValue(response, 'body', 'pakai method PUT nih')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
-//testcase untuk method DELETE
+//testcase untuk method DELETE posts
 response = WS.sendRequest(findTestObject('posts/DELETE-posts'))
 WS.verifyResponseStatusCode(response, 200)

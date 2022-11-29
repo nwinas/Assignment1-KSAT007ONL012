@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-//testcase untuk method GET
+//testcase untuk method GET comments
 response = WS.sendRequest(findTestObject('comments/GET-comments'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].postId', '1')
@@ -33,7 +33,7 @@ WS.verifyElementPropertyValue(response, '[1].email', 'Jayne_Kuhic@sydney.com')
 WS.verifyElementPropertyValue(response, '[1].body', 'est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et')
 
 
-//testcase untuk method POST
+//testcase untuk method POST comments
 response = WS.sendRequest(findTestObject('comments/POST-comments'))
 WS.verifyResponseStatusCode(response, 201)
 WS.verifyElementPropertyValue(response, 'postId', '1')
@@ -43,7 +43,7 @@ WS.verifyElementPropertyValue(response, 'email', 'wina@mailsac.com')
 WS.verifyElementPropertyValue(response, 'body', 'Do what you can, with what you have, where you are')
 
 
-//testcase untuk method PATCH
+//testcase untuk method PATCH comments
 response = WS.sendRequest(findTestObject('comments/PATCH-comments'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'postId', '1')
@@ -53,7 +53,7 @@ WS.verifyElementPropertyValue(response, 'email', 'capricorn@mailsac.com')
 WS.verifyElementPropertyValue(response, 'body', 'this is one of the zodiac names')
 
 
-//testcase untuk method PUT
+//testcase untuk method PUT comments
 response = WS.sendRequest(findTestObject('comments/PUT-comments'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'name', 'pinky')
@@ -61,6 +61,6 @@ WS.verifyElementPropertyValue(response, 'email', 'pinky@mailsac.com')
 WS.verifyElementPropertyValue(response, 'body', 'It is never too late to be what you might have been')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
-//testcase untuk method DELETE
+//testcase untuk method DELETE comments
 response = WS.sendRequest(findTestObject('comments/DELETE-comments'))
 WS.verifyResponseStatusCode(response, 200)

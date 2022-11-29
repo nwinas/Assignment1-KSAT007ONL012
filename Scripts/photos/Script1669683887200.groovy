@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//testcase untuk method GET
+//testcase untuk method GET photos
 response = WS.sendRequest(findTestObject('photos/GET-photos'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].albumId', '1')
@@ -31,7 +31,7 @@ WS.verifyElementPropertyValue(response, '[1].title', 'reprehenderit est deserunt
 WS.verifyElementPropertyValue(response, '[1].url', 'https://via.placeholder.com/600/771796')
 WS.verifyElementPropertyValue(response, '[1].thumbnailUrl', 'https://via.placeholder.com/150/771796')
 
-//testcase untuk method POST
+//testcase untuk method POST photos
 response = WS.sendRequest(findTestObject('photos/POST-photos'))
 WS.verifyResponseStatusCode(response, 201)
 WS.verifyElementPropertyValue(response, 'albumId', '26')
@@ -40,7 +40,7 @@ WS.verifyElementPropertyValue(response, 'title', 'One day or day one. You decide
 WS.verifyElementPropertyValue(response, 'url', 'https://twitter.com/AnimexGojo/status/1480198982676750344/photo/1')
 WS.verifyElementPropertyValue(response, 'thumbnailUrl', 'https://twitter.com/AoTWiki/status/1474394920937000967/photo/1')
 
-//testcase untuk method PATCH
+//testcase untuk method PATCH photos
 response = WS.sendRequest(findTestObject('photos/PATCH-photos'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'albumId', '1')
@@ -49,7 +49,7 @@ WS.verifyElementPropertyValue(response, 'title', 'The hard days are what make yo
 WS.verifyElementPropertyValue(response, 'url', 'https://twitter.com/AoTWiki/status/1591755703857074182/photo/1')
 WS.verifyElementPropertyValue(response, 'thumbnailUrl', 'https://twitter.com/AoTWiki/status/1597364014908116994/photo/1')
 
-//testcase untuk method PUT
+//testcase untuk method PUT photos
 response = WS.sendRequest(findTestObject('photos/PUT-photos'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'title', 'If opportunity doesn’t knock, build a door')
@@ -57,6 +57,6 @@ WS.verifyElementPropertyValue(response, 'url', 'https://twitter.com/AoTWiki/stat
 WS.verifyElementPropertyValue(response, 'thumbnailUrl', 'https://twitter.com/AoTWiki/status/1596826230170451969/photo/1')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
-//testcase untuk method DELETE
+//testcase untuk method DELETE photos
 response = WS.sendRequest(findTestObject('photos/DELETE-photos'))
 WS.verifyResponseStatusCode(response, 200)

@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-//testcase untuk method GET
+//testcase untuk method GET albums
 response = WS.sendRequest(findTestObject('albums/GET-albums'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].userId', '1')
@@ -28,26 +28,26 @@ WS.verifyElementPropertyValue(response, '[1].userId', '1')
 WS.verifyElementPropertyValue(response, '[1].id', '2')
 WS.verifyElementPropertyValue(response, '[1].title', 'sunt qui excepturi placeat culpa')
 
-//testcase untuk method POST
+//testcase untuk method POST albums
 response = WS.sendRequest(findTestObject('albums/POST-albums'))
 WS.verifyResponseStatusCode(response, 201)
 WS.verifyElementPropertyValue(response, 'userId', '26')
 WS.verifyElementPropertyValue(response, 'id', '101')
 WS.verifyElementPropertyValue(response, 'title', 'Whatever you are, be a good one')
 
-//testcase untuk method PATCH
+//testcase untuk method PATCH albums
 response = WS.sendRequest(findTestObject('albums/PATCH-albums'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'userId', '1')
 WS.verifyElementPropertyValue(response, 'id', '1')
 WS.verifyElementPropertyValue(response, 'title', 'If you can dream it, you can do it')
 
-//testcase untuk method PUT
+//testcase untuk method PUT albums
 response = WS.sendRequest(findTestObject('albums/PUT-albums'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'title', 'Impossible is just an opinion')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
-//testcase untuk method DELETE
+//testcase untuk method DELETE albums
 response = WS.sendRequest(findTestObject('albums/DELETE-albums'))
 WS.verifyResponseStatusCode(response, 200)
