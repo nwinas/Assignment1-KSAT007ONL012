@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>POST-posts</name>
+   <name>PATCH-comments</name>
    <tag></tag>
-   <elementGuidId>b6a92fd5-81d8-4fd9-a3ed-dbf9f9fecbdd</elementGuidId>
+   <elementGuidId>84a99282-158b-4a5b-b5ee-56252f4e0ac1</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>-1</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;[\n{\n    \&quot;userId\&quot;: 101,\n    \&quot;id\&quot;: 101,\n    \&quot;title\&quot;: \&quot;Assignment katalon\&quot;,\n    \&quot;body\&quot;: \&quot;Tugas API\&quot;\n},\n{\n    \&quot;userId\&quot;: 102,\n    \&quot;id\&quot;: 102,\n    \&quot;title\&quot;: \&quot;Assignment katalon 2\&quot;,\n    \&quot;body\&quot;: \&quot;Tugas API 2\&quot;\n}\n  ]&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;name\&quot;: \&quot;capricorn\&quot;,\n    \&quot;email\&quot;: \&quot;capricorn@mailsac.com\&quot;,\n    \&quot;body\&quot;: \&quot;this is one of the zodiac names\&quot;\n  }&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -25,8 +25,8 @@
    <katalonVersion>8.1.0</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://jsonplaceholder.typicode.com/posts</restUrl>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>https://jsonplaceholder.typicode.com/comments/1</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -49,6 +49,14 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-WS.verifyElementPropertyValue(response, 'title', 'Assignment katalon')</verificationScript>
+
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)
+WS.verifyElementPropertyValue(response, 'postId', '')
+WS.verifyElementPropertyValue(response, 'id', '')
+WS.verifyElementPropertyValue(response, 'name', '')
+WS.verifyElementPropertyValue(response, 'email', '')
+WS.verifyElementPropertyValue(response, 'body', '')</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

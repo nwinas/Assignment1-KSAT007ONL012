@@ -17,44 +17,41 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
 //testcase untuk method GET
-response = WS.sendRequest(findTestObject('posts/GET-posts'))
-
+response = WS.sendRequest(findTestObject('todos/GET-todos'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].userId', '1')
 WS.verifyElementPropertyValue(response, '[0].id', '1')
-WS.verifyElementPropertyValue(response, '[0].title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit')
-WS.verifyElementPropertyValue(response, '[0].body', 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto')
-
+WS.verifyElementPropertyValue(response, '[0].title', 'delectus aut autem')
+WS.verifyElementPropertyValue(response, '[0].completed', 'false')
 WS.verifyElementPropertyValue(response, '[1].userId', '1')
 WS.verifyElementPropertyValue(response, '[1].id', '2')
-WS.verifyElementPropertyValue(response, '[1].title', 'qui est esse')
-WS.verifyElementPropertyValue(response, '[1].body', 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla')
+WS.verifyElementPropertyValue(response, '[1].title', 'quis ut nam facilis et officia qui')
+WS.verifyElementPropertyValue(response, '[1].completed', 'false')
 
 //testcase untuk method POST
-response = WS.sendRequest(findTestObject('posts/POST-posts'))
+response = WS.sendRequest(findTestObject('todos/POST-todos'))
 WS.verifyResponseStatusCode(response, 201)
-WS.verifyElementPropertyValue(response, 'userId', '101')
-WS.verifyElementPropertyValue(response, 'id', '101')
-WS.verifyElementPropertyValue(response, 'title', 'Assignment katalon')
-WS.verifyElementPropertyValue(response, 'body', 'Tugas API')
+WS.verifyElementPropertyValue(response, 'userId', '26')
+WS.verifyElementPropertyValue(response, 'id', '201')
+WS.verifyElementPropertyValue(response, 'title', 'Work hard in silence, let your success be the noise')
+WS.verifyElementPropertyValue(response, 'completed', 'false')
 
 //testcase untuk method PATCH
-response = WS.sendRequest(findTestObject('posts/PATCH-posts'))
+response = WS.sendRequest(findTestObject('todos/PATCH-todos'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'userId', '1')
 WS.verifyElementPropertyValue(response, 'id', '1')
-WS.verifyElementPropertyValue(response, 'title', 'pakai method PATCH')
-WS.verifyElementPropertyValue(response, 'body', 'pakai method PATCH nih')
+WS.verifyElementPropertyValue(response, 'title', 'The miracle is not that we do this work, but that we are happy to do it')
+WS.verifyElementPropertyValue(response, 'completed', 'true')
 
 //testcase untuk method PUT
-response = WS.sendRequest(findTestObject('posts/PUT-posts'))
+response = WS.sendRequest(findTestObject('todos/PUT-todos'))
 WS.verifyResponseStatusCode(response, 200)
-WS.verifyElementPropertyValue(response, 'title', 'pakai method PUT')
-WS.verifyElementPropertyValue(response, 'body', 'pakai method PUT nih')
+WS.verifyElementPropertyValue(response, 'title', 'Never allow a person to tell you no who doesn’t have the power to say yes')
+WS.verifyElementPropertyValue(response, 'completed', 'true')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
 //testcase untuk method DELETE
-response = WS.sendRequest(findTestObject('posts/DELETE-posts'))
+response = WS.sendRequest(findTestObject('todos/DELETE-todos'))
 WS.verifyResponseStatusCode(response, 200)

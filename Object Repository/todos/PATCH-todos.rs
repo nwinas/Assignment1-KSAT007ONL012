@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>PUT-posts</name>
+   <name>PATCH-todos</name>
    <tag></tag>
-   <elementGuidId>16ac0d26-af61-4790-9ca4-78008e319b67</elementGuidId>
+   <elementGuidId>190f9194-e86f-4f2d-ae0d-b22231de500b</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <connectionTimeout>-1</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;title\&quot;: \&quot;pakai method PUT\&quot;,\n    \&quot;body\&quot;: \&quot;pakai method PUT nih\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;title\&quot;: \&quot;The miracle is not that we do this work, but that we are happy to do it\&quot;,\n    \&quot;completed\&quot;: true\n  }&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -25,8 +25,8 @@
    <katalonVersion>8.1.0</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>PUT</restRequestMethod>
-   <restUrl>https://jsonplaceholder.typicode.com/posts/1</restUrl>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>https://jsonplaceholder.typicode.com/todos/1</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -48,8 +48,14 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+WS.verifyElementPropertyValue(response, 'userId', '')
+WS.verifyElementPropertyValue(response, 'id', '')
 WS.verifyElementPropertyValue(response, 'title', '')
-WS.verifyElementPropertyValue(response, 'body', '')
-WS.verifyElementPropertyValue(response, 'id', '')</verificationScript>
+WS.verifyElementPropertyValue(response, 'completed', '')
+
+
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

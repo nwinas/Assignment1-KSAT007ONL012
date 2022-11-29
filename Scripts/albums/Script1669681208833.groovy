@@ -19,42 +19,35 @@ import org.openqa.selenium.Keys as Keys
 
 
 //testcase untuk method GET
-response = WS.sendRequest(findTestObject('posts/GET-posts'))
-
+response = WS.sendRequest(findTestObject('albums/GET-albums'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].userId', '1')
 WS.verifyElementPropertyValue(response, '[0].id', '1')
-WS.verifyElementPropertyValue(response, '[0].title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit')
-WS.verifyElementPropertyValue(response, '[0].body', 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto')
-
+WS.verifyElementPropertyValue(response, '[0].title', 'quidem molestiae enim')
 WS.verifyElementPropertyValue(response, '[1].userId', '1')
 WS.verifyElementPropertyValue(response, '[1].id', '2')
-WS.verifyElementPropertyValue(response, '[1].title', 'qui est esse')
-WS.verifyElementPropertyValue(response, '[1].body', 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla')
+WS.verifyElementPropertyValue(response, '[1].title', 'sunt qui excepturi placeat culpa')
 
 //testcase untuk method POST
-response = WS.sendRequest(findTestObject('posts/POST-posts'))
+response = WS.sendRequest(findTestObject('albums/POST-albums'))
 WS.verifyResponseStatusCode(response, 201)
-WS.verifyElementPropertyValue(response, 'userId', '101')
+WS.verifyElementPropertyValue(response, 'userId', '26')
 WS.verifyElementPropertyValue(response, 'id', '101')
-WS.verifyElementPropertyValue(response, 'title', 'Assignment katalon')
-WS.verifyElementPropertyValue(response, 'body', 'Tugas API')
+WS.verifyElementPropertyValue(response, 'title', 'Whatever you are, be a good one')
 
 //testcase untuk method PATCH
-response = WS.sendRequest(findTestObject('posts/PATCH-posts'))
+response = WS.sendRequest(findTestObject('albums/PATCH-albums'))
 WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, 'userId', '1')
 WS.verifyElementPropertyValue(response, 'id', '1')
-WS.verifyElementPropertyValue(response, 'title', 'pakai method PATCH')
-WS.verifyElementPropertyValue(response, 'body', 'pakai method PATCH nih')
+WS.verifyElementPropertyValue(response, 'title', 'If you can dream it, you can do it')
 
 //testcase untuk method PUT
-response = WS.sendRequest(findTestObject('posts/PUT-posts'))
+response = WS.sendRequest(findTestObject('albums/PUT-albums'))
 WS.verifyResponseStatusCode(response, 200)
-WS.verifyElementPropertyValue(response, 'title', 'pakai method PUT')
-WS.verifyElementPropertyValue(response, 'body', 'pakai method PUT nih')
+WS.verifyElementPropertyValue(response, 'title', 'Impossible is just an opinion')
 WS.verifyElementPropertyValue(response, 'id', '1')
 
 //testcase untuk method DELETE
-response = WS.sendRequest(findTestObject('posts/DELETE-posts'))
+response = WS.sendRequest(findTestObject('albums/DELETE-albums'))
 WS.verifyResponseStatusCode(response, 200)

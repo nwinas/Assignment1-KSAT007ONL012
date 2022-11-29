@@ -19,8 +19,8 @@ import org.openqa.selenium.Keys as Keys
 
 
 //testcase untuk method GET
-response = WS.sendRequest(findTestObject('GET-comments'))
-
+response = WS.sendRequest(findTestObject('comments/GET-comments'))
+WS.verifyResponseStatusCode(response, 200)
 WS.verifyElementPropertyValue(response, '[0].postId', '1')
 WS.verifyElementPropertyValue(response, '[0].id', '1')
 WS.verifyElementPropertyValue(response, '[0].name', 'id labore ex et quam laborum')
@@ -34,16 +34,33 @@ WS.verifyElementPropertyValue(response, '[1].body', 'est natus enim nihil est do
 
 
 //testcase untuk method POST
-//response = WS.sendRequest(findTestObject('POST-posts'))
+response = WS.sendRequest(findTestObject('comments/POST-comments'))
+WS.verifyResponseStatusCode(response, 201)
+WS.verifyElementPropertyValue(response, 'postId', '1')
+WS.verifyElementPropertyValue(response, 'id', '501')
+WS.verifyElementPropertyValue(response, 'name', 'wina')
+WS.verifyElementPropertyValue(response, 'email', 'wina@mailsac.com')
+WS.verifyElementPropertyValue(response, 'body', 'Do what you can, with what you have, where you are')
 
 
 //testcase untuk method PATCH
-//response = WS.sendRequest(findTestObject('PATCH-posts'))
+response = WS.sendRequest(findTestObject('comments/PATCH-comments'))
+WS.verifyResponseStatusCode(response, 200)
+WS.verifyElementPropertyValue(response, 'postId', '1')
+WS.verifyElementPropertyValue(response, 'id', '1')
+WS.verifyElementPropertyValue(response, 'name', 'capricorn')
+WS.verifyElementPropertyValue(response, 'email', 'capricorn@mailsac.com')
+WS.verifyElementPropertyValue(response, 'body', 'this is one of the zodiac names')
 
 
 //testcase untuk method PUT
-//response = WS.sendRequest(findTestObject('PUT-posts'))
+response = WS.sendRequest(findTestObject('comments/PUT-comments'))
+WS.verifyResponseStatusCode(response, 200)
+WS.verifyElementPropertyValue(response, 'name', 'pinky')
+WS.verifyElementPropertyValue(response, 'email', 'pinky@mailsac.com')
+WS.verifyElementPropertyValue(response, 'body', 'It is never too late to be what you might have been')
+WS.verifyElementPropertyValue(response, 'id', '1')
 
 //testcase untuk method DELETE
-//response = WS.sendRequest(findTestObject('DELETE-posts'))
-//WS.verifyResponseStatusCode(response, 200)
+response = WS.sendRequest(findTestObject('comments/DELETE-comments'))
+WS.verifyResponseStatusCode(response, 200)
